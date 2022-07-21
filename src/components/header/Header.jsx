@@ -15,7 +15,7 @@ const Header = () => {
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue()
   const login = async () => {
     if (!user) {
-      const { user: { refreshToken, providerData } } = await signInWithPopup(firebaseAuth, provider)
+      const { user: {providerData} } = await signInWithPopup(firebaseAuth, provider)
       dispatch({
         type: actionType.SET_USER,
         user: providerData[0]
@@ -50,7 +50,7 @@ const Header = () => {
         </Link>
         <div className='flex items-center justify-center gap-8'>
           <motion.ul initial={{ opacity: 0, x: 200 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 200 }} className='flex items-center gap-8'>
-            <li className='text-base text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out'>Home</li>
+           <Link  to={"/"}><li className='text-base text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out'>Home</li></Link>
             <li className='text-base text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out'>Menu</li>
             <li className='text-base text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out'>About Us</li>
             <li className='text-base text-textColor hover:text-headingColor cursor-pointer duration-100 transition-all ease-in-out'>Services</li>

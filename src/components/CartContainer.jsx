@@ -24,7 +24,6 @@ const CartContainer = () => {
           return accumulator + item.qty * item.price;
         }, 0);
         setTot(totalPrice);
-        console.log(tot);
       }, [tot, flag]);
 
       const clearCart = () => {
@@ -44,7 +43,7 @@ const CartContainer = () => {
 
                 </motion.div>
                 <p className='text-textColor text-lg font-semibold'>Cart</p>
-                <motion.p whileTap={{ scale: 0.75 }} className='flex items-center gap-2 p-1 px-2 my-2 bg-gray-100 rounded-md hover:shadow-md cursor-pointer text-textColor text-base'>Clear<RiRefreshFill /></motion.p>
+                <motion.p whileTap={{ scale: 0.75 }} onClick={clearCart} className='flex items-center gap-2 p-1 px-2 my-2 bg-gray-100 rounded-md hover:shadow-md cursor-pointer text-textColor text-base'>Clear<RiRefreshFill /></motion.p>
             </div>
             {/* bottom section */}
             {cartItems && cartItems.length > 0 ? (

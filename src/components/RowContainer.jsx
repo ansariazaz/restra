@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md'
+import { MdShoppingBasket} from 'react-icons/md'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react';
 import notFound from '../img/NotFound.svg'
